@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>GenAI Chat Assistant</title>
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+
+<body>
+
+<h1>GenAI Chat Assistant</h1>
+
+<div class="chat-box">
+
+{% if history %}
+    {% for chat in history %}
+        <p><b>You:</b> {{ chat.q }}</p>
+        <p><b>Assistant:</b> {{ chat.a }}</p>
+        <hr>
+    {% endfor %}
+{% endif %}
+
+</div>
+
+<form method="POST">
+    <input type="text" name="question" placeholder="Ask a question..." required>
+    <button type="submit">Send</button>
+</form>
+
+</body>
+</html>
